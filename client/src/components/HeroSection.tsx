@@ -1,18 +1,29 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 
 const PFPGenerator = lazy(() => import("./PFPGenerator"));
 
 export default function HeroSection() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section id="hero" className="relative bg-[#eb0d18] flex flex-col justify-center items-center text-white text-center overflow-hidden py-[120px] md:py-[120px] px-4 md:px-6 pb-[300px] md:pb-[500px]" 
 >
       <div className="relative flex flex-col justify-center items-center w-full h-full px-4">
         <div className="relative flex">
           <h1 
-            className="hero-heading text-[16vw] font-bold cursor-crosshair relative z-10 m-0"
+            className="hero-heading font-bold cursor-crosshair relative z-10 m-0"
             style={{
               fontFamily: 'PP Right Grotesk',
-              textShadow: '-17px 17px 0 var(--black)',
+              textShadow: `-${17 - scrollY * 0.05}px ${17 - scrollY * 0.05}px 0 var(--black)`,
+              fontSize: `${16 - scrollY * 0.02}vw`,
+              transform: `scale(${Math.max(0.7, 1 - scrollY * 0.0008)})`,
+              transition: 'transform 0.05s ease-out, font-size 0.05s ease-out',
             }}
             onMouseEnter={(e) => e.currentTarget.style.color = '#eedf39'}
             onMouseLeave={(e) => e.currentTarget.style.color = 'white'}
@@ -21,54 +32,129 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        {/* Floating Images */}
+        {/* Derp Hero Characters with Parallax - Better Spacing */}
+        <img 
+          src="/images/derphero1.png" 
+          alt="" 
+          className="absolute w-[18vw] min-w-[160px] max-w-[280px] z-[2] hidden md:block"
+          style={{ 
+            top: '2%', 
+            left: '3%', 
+            transform: `translateY(${scrollY * 0.15}px) rotate(-8deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        />
+        <img 
+          src="/images/derphero2.png" 
+          alt="" 
+          className="absolute w-[17vw] min-w-[150px] max-w-[270px] z-[3] hidden md:block"
+          style={{ 
+            top: '8%', 
+            right: '2%', 
+            transform: `translateY(${scrollY * 0.2}px) rotate(12deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        />
+        <img 
+          src="/images/derphero3.png" 
+          alt="" 
+          className="absolute w-[20vw] min-w-[180px] max-w-[320px] z-[2] hidden md:block"
+          style={{ 
+            bottom: '5%', 
+            left: '1%', 
+            transform: `translateY(${scrollY * 0.12}px) rotate(5deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        />
+        <img 
+          src="/images/derphero4.png" 
+          alt="" 
+          className="absolute w-[18vw] min-w-[160px] max-w-[290px] z-[3] hidden md:block"
+          style={{ 
+            bottom: '8%', 
+            right: '1%', 
+            transform: `translateY(${scrollY * 0.18}px) rotate(-10deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        />
+
+        {/* Floating Decorative Images with Parallax - Repositioned for Better Spacing */}
         <img 
           src="/images/IMG_1407.PNG" 
           alt="" 
-          className="absolute w-[14vw] min-w-[160px] max-w-[300px] z-0"
-          style={{ top: '90%', left: '32%', transform: 'rotate(20deg)' }}
+          className="absolute w-[12vw] min-w-[130px] max-w-[250px] z-0"
+          style={{ 
+            top: '85%', 
+            left: '35%', 
+            transform: `translateY(${scrollY * 0.25}px) rotate(20deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
         <img 
           src="/images/IMG_1389.PNG" 
           alt="" 
-          className="absolute w-[14vw] min-w-[160px] max-w-[300px] z-0"
-          style={{ top: '-3%', left: '12%', transform: 'rotate(8deg)' }}
+          className="absolute w-[11vw] min-w-[120px] max-w-[230px] z-0"
+          style={{ 
+            top: '12%', 
+            left: '22%', 
+            transform: `translateY(${scrollY * 0.08}px) rotate(8deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
         <img 
           src="/images/IMG_1393.PNG" 
           alt="" 
-          className="absolute w-[12vw] min-w-[160px] max-w-[300px] z-0"
-          style={{ top: '-2%', right: '12%', transform: 'rotate(8deg)' }}
+          className="absolute w-[10vw] min-w-[110px] max-w-[220px] z-0"
+          style={{ 
+            top: '15%', 
+            right: '20%', 
+            transform: `translateY(${scrollY * 0.1}px) rotate(8deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
         <img 
           src="/images/IMG_1391.PNG" 
           alt="" 
-          className="absolute w-[14vw] min-w-[160px] max-w-[300px] z-[6]"
-          style={{ top: '-18%', right: '30%', transform: 'rotate(20deg)' }}
+          className="absolute w-[12vw] min-w-[130px] max-w-[240px] z-[1]"
+          style={{ 
+            top: '-10%', 
+            right: '38%', 
+            transform: `translateY(${scrollY * 0.13}px) rotate(20deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
         <img 
           src="/images/IMG_1407.PNG" 
           alt="" 
-          className="absolute w-[14vw] min-w-[160px] max-w-[300px] z-[1]"
-          style={{ bottom: '1%', left: '10vw', transform: 'rotate(20deg)' }}
-        />
-        <img 
-          src="/images/IMG_1389.PNG" 
-          alt="" 
-          className="absolute w-[14vw] min-w-[160px] max-w-[300px] z-[1]"
-          style={{ bottom: '25%', right: '10vw', transform: 'scale(0.8) rotate(-14deg)' }}
+          className="absolute w-[11vw] min-w-[120px] max-w-[230px] z-[1]"
+          style={{ 
+            bottom: '-5%', 
+            left: '18%', 
+            transform: `translateY(${scrollY * 0.22}px) rotate(20deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
         <img 
           src="/images/IMG_1392.PNG" 
           alt="" 
-          className="absolute w-[14vw] min-w-[160px] max-w-[300px] z-[1]"
-          style={{ bottom: '-230px', right: '0', transform: 'rotate(14deg)' }}
+          className="absolute w-[12vw] min-w-[130px] max-w-[240px] z-[1]"
+          style={{ 
+            bottom: '-230px', 
+            right: '5%', 
+            transform: `translateY(${scrollY * 0.2}px) rotate(14deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
         <img 
           src="/images/IMG_1390.PNG" 
           alt="" 
-          className="absolute w-[14vw] min-w-[160px] max-w-[300px] z-[1]"
-          style={{ bottom: '-335px', left: 'auto', transform: 'rotate(-11deg)' }}
+          className="absolute w-[12vw] min-w-[130px] max-w-[240px] z-[1]"
+          style={{ 
+            bottom: '-335px', 
+            left: '45%', 
+            transform: `translateY(${scrollY * 0.24}px) rotate(-11deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
         />
 
         <a 
