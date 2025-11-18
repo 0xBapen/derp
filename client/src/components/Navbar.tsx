@@ -9,19 +9,16 @@ export default function Navbar() {
       <nav className="fixed top-3 left-0 right-0 z-[9999] hidden md:flex justify-center">
         <div className="bg-[var(--black)] rounded-2xl flex items-center justify-around max-w-[580px] px-3 py-0">
           <a href="#hero" className="text-white px-4 py-5 hover:text-[#f9e174] transition-colors">
-            Robotos
+            Home
           </a>
-          <a href="#mint" className="text-white px-4 py-5 hover:text-[#f9e174] transition-colors">
-            Mint
+          <a href="https://www.dextools.io/app/en/solana/pair-explorer/F4aRW3o19cS9pxrjAeRWL3RY2p9JWWhGN8AVMsTUEWeS?t=1763495776307" className="text-white px-4 py-5 hover:text-[#f9e174] transition-colors">
+            DexTools
           </a>
-          <a href="#rarity" className="text-white px-4 py-5 hover:text-[#f9e174] transition-colors">
-            Rarity
-          </a>
-          <a href="#faq" className="text-white px-4 py-5 pr-6 hover:text-[#f9e174] transition-colors">
-            FAQ
+          <a href="https://x.com/i/communities/1989456581554012298" className="text-white px-4 py-5 pr-6 hover:text-[#f9e174] transition-colors">
+            X Comm
           </a>
           <button className="bg-[#ff3979] text-white px-4 py-2 rounded-lg hover:bg-[#5100ff] transition-colors ml-2">
-            Connect
+            X
           </button>
         </div>
       </nav>
@@ -55,13 +52,13 @@ export default function Navbar() {
         </div>
         {isOpen && (
           <div className="bg-[var(--black)] border-t border-gray-700">
-            <a href="#hero" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">Home</a>
-            <a href="#mint" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">About</a>
-            <a href="#pfp-generator" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">Generator</a>
-            <a href="#faq" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">FAQ</a>
+            <a href="#" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">Home</a>
+            <a href="https://www.dextools.io/app/en/solana/pair-explorer/F4aRW3o19cS9pxrjAeRWL3RY2p9JWWhGN8AVMsTUEWeS?t=1763495776307" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">DexTools</a>
+            <a href="https://x.com/i/communities/1989456581554012298" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">X Comm</a>
+            <a href="https://x.com/derpon_sol" onClick={() => setIsOpen(false)} className="block text-white px-6 py-3 hover:bg-[#ff3979] transition-colors">X</a>
             <div className="px-6 py-3">
               <button className="w-full bg-[#5100ff] text-white px-4 py-3 rounded-lg hover:bg-[#ff3979] transition-colors font-bold">
-                Connect Wallet
+                X 
               </button>
             </div>
           </div>
