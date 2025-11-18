@@ -1,0 +1,293 @@
+/* Hero Section Animations - Enhanced with Parallax */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth floating animation for images */
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-20px) rotate(var(--rotate, 0deg));
+  }
+}
+
+@keyframes hero-float-alt {
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--rotate, 0deg)) scale(var(--scale, 1));
+  }
+  50% {
+    transform: translateY(-25px) rotate(var(--rotate, 0deg)) scale(var(--scale, 1));
+  }
+}
+
+/* Subtle rotation animation */
+@keyframes gentle-rotate {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Scale pulse for images */
+@keyframes hero-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    transform: scale(1.05) rotate(var(--rotate, 0deg));
+  }
+}
+
+/* Apply animations to hero images */
+#hero img[alt=""] {
+  animation: hero-float 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+#hero img[alt=""]:nth-child(1) {
+  animation-delay: 0s;
+  animation-duration: 5s;
+}
+
+#hero img[alt=""]:nth-child(2) {
+  animation: hero-float-alt 4.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+#hero img[alt=""]:nth-child(3) {
+  animation-delay: 1s;
+  animation-duration: 4.2s;
+}
+
+#hero img[alt=""]:nth-child(4) {
+  animation: hero-float-alt 5.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+#hero img[alt=""]:nth-child(5) {
+  animation-delay: 2s;
+  animation-duration: 4.8s;
+}
+
+#hero img[alt=""]:nth-child(6) {
+  animation: hero-float-alt 5s ease-in-out infinite;
+  animation-delay: 2.5s;
+}
+
+#hero img[alt=""]:nth-child(7) {
+  animation-delay: 0.8s;
+  animation-duration: 4.5s;
+}
+
+#hero img[alt=""]:nth-child(8) {
+  animation: hero-float-alt 5.2s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+/* Hover effect on images */
+#hero img[alt=""]:hover {
+  transform: scale(1.15) !important;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4)) brightness(1.1);
+  z-index: 100;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+/* Derp hero character animations */
+#hero img[src*="derphero"] {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.2));
+}
+
+#hero img[src*="derphero"]:hover {
+  transform: scale(1.2) translateY(-10px) !important;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5)) brightness(1.15);
+  z-index: 150;
+}
+
+/* Wiggle animation for derp characters */
+@keyframes derp-wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+#hero img[src*="derphero1"] {
+  animation: derp-wiggle 3s ease-in-out infinite;
+}
+
+#hero img[src*="derphero2"] {
+  animation: derp-wiggle 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+#hero img[src*="derphero3"] {
+  animation: derp-wiggle 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+#hero img[src*="derphero4"] {
+  animation: derp-wiggle 3.8s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* Hero heading animation */
+.hero-heading {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: -17px 17px 0 var(--black);
+  }
+  50% {
+    text-shadow: -17px 17px 0 var(--black), 0 0 20px rgba(238, 223, 57, 0.3);
+  }
+}
+
+.hero-heading:hover {
+  animation-play-state: paused;
+}
+
+/* Button animations matching webflow */
+#hero a[href="#"] {
+  position: relative;
+  overflow: hidden;
+}
+
+#hero a[href="#"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+#hero a[href="#"]:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Contract address fade in */
+#hero strong {
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Social links animation */
+#hero .flex.items-center.justify-center.gap-4 {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+#hero .flex.items-center.justify-center.gap-4 a {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#hero .flex.items-center.justify-center.gap-4 a:hover {
+  transform: scale(1.15) translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Mint section title animation */
+#mint h2 {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+#mint h2:hover {
+  transform: scale(1.05);
+  color: #eb0d18;
+}
+
+/* Parallax scrolling enhancement */
+@media (prefers-reduced-motion: no-preference) {
+  #hero {
+    background-attachment: fixed;
+  }
+  
+  /* Smooth parallax for all sections */
+  section {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
+
+/* 3D transform for better parallax performance */
+#hero img {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Loading animation for images */
+#hero img[alt=""] {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards, hero-float 4s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Stagger the fade-in */
+#hero img[alt=""]:nth-child(1) { animation-delay: 0.1s, 0.1s; }
+#hero img[alt=""]:nth-child(2) { animation-delay: 0.2s, 0.2s; }
+#hero img[alt=""]:nth-child(3) { animation-delay: 0.3s, 0.3s; }
+#hero img[alt=""]:nth-child(4) { animation-delay: 0.4s, 0.4s; }
+#hero img[alt=""]:nth-child(5) { animation-delay: 0.5s, 0.5s; }
+#hero img[alt=""]:nth-child(6) { animation-delay: 0.6s, 0.6s; }
+#hero img[alt=""]:nth-child(7) { animation-delay: 0.7s, 0.7s; }
+#hero img[alt=""]:nth-child(8) { animation-delay: 0.8s, 0.8s; }
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  #hero img[alt=""] {
+    animation-duration: 3s !important;
+  }
+  
+  .hero-heading {
+    animation: none;
+  }
+  
+  #hero a[href="#"]::before {
+    display: none;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  #hero img[alt=""],
+  .hero-heading,
+  #hero strong,
+  #hero .flex.items-center.justify-center.gap-4 {
+    animation: none !important;
+  }
+  
+  #hero img[alt=""] {
+    opacity: 1;
+  }
+}
+
