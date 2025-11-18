@@ -7,6 +7,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import './fonts.css'; // Import the custom font CSS here
+import '@/styles/mobile-fixes.css'; // Import mobile responsive fixes
 
 function Router() {
   return (

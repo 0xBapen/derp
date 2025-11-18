@@ -422,34 +422,47 @@
 /* Responsive */
 @media (max-width: 768px) {
   .derp-card {
-    padding: 1.5rem;
+    padding: 1rem;
+    box-shadow: 3px 3px 0 0 #000;
+  }
+
+  .derp-card:hover {
+    box-shadow: 4px 4px 0 0 #000;
+    transform: translateY(-2px);
   }
 
   .derp-card-header {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
   }
 
   .derp-card-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .derp-icon-circle {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   .derp-upload-area,
   .derp-generated-area {
-    min-height: 300px;
+    min-height: 250px;
+    border-width: 2px;
   }
 
   .derp-upload-placeholder {
-    padding: 1.5rem;
-    gap: 1rem;
+    padding: 1rem;
+    gap: 0.75rem;
   }
 
   .derp-upload-icon {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
   }
 
   .derp-upload-title {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
 
   .derp-upload-subtitle,
@@ -457,14 +470,73 @@
     font-size: 0.75rem;
   }
 
+  .derp-upload-hint {
+    font-size: 0.625rem;
+  }
+
   .derp-generate-button {
     height: 3rem;
-    font-size: 1rem;
+    font-size: 0.875rem;
+    border-width: 3px;
+    box-shadow: 0 4px 0 0 #000;
+    gap: 0.5rem;
+  }
+
+  .derp-generate-button:hover:not(:disabled) {
+    box-shadow: 0 3px 0 0 #000;
   }
 
   .derp-download-button {
-    height: 3rem;
+    height: 2.75rem;
+    font-size: 0.75rem;
+    border-width: 3px;
+    margin-top: 1rem;
+  }
+
+  .derp-close-button {
+    width: 2.25rem;
+    height: 2.25rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .derp-placeholder-icon {
+    max-width: 20rem;
+  }
+
+  .derp-placeholder-title {
     font-size: 0.875rem;
+  }
+
+  .derp-card-body {
+    gap: 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+  .derp-card {
+    padding: 0.75rem;
+  }
+
+  .derp-card-title {
+    font-size: 0.875rem;
+  }
+
+  .derp-upload-area,
+  .derp-generated-area {
+    min-height: 220px;
+  }
+
+  .derp-generate-button {
+    height: 2.75rem;
+    font-size: 0.75rem;
+    padding: 0 0.75rem;
+  }
+
+  .derp-upload-icon {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }
 

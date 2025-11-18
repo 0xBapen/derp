@@ -1,0 +1,208 @@
+/* Mobile Responsive Improvements */
+
+/* Global Mobile Fixes */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Container adjustments */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Hero Section Mobile */
+  #hero {
+    padding-top: 80px !important;
+    padding-bottom: 300px !important;
+    min-height: auto;
+  }
+
+  #hero .hero-heading {
+    font-size: 20vw !important;
+    text-shadow: -8px 8px 0 var(--black) !important;
+  }
+
+  #hero img {
+    max-width: 120px !important;
+    min-width: 100px !important;
+  }
+
+  #hero a {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.5rem !important;
+    border-width: 4px !important;
+  }
+
+  #hero strong {
+    font-size: 0.75rem !important;
+    word-break: break-all;
+  }
+
+  /* Mint Section Mobile */
+  #mint {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  #mint .container {
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+
+  #mint > div > div {
+    padding: 2rem 1.5rem !important;
+  }
+
+  #mint h2 {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  #mint img {
+    width: 180px !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  #mint p {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* PFP Generator Mobile */
+  #pfp-generator {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  #pfp-generator .container {
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+
+  #pfp-generator > div > div {
+    padding: 2rem 1rem !important;
+  }
+
+  #pfp-generator h2 {
+    font-size: 2rem !important;
+  }
+
+  #pfp-generator p {
+    font-size: 0.875rem !important;
+  }
+
+  /* Grid to single column on mobile */
+  #pfp-generator .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* FAQ Section Mobile */
+  #faq {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+
+  #faq h3 {
+    font-size: 1.5rem !important;
+  }
+
+  #faq .container {
+    max-width: 100% !important;
+    padding: 0 1rem;
+  }
+
+  #faq iframe {
+    height: 200px !important;
+  }
+
+  /* Hide decorative images on mobile for cleaner look */
+  #faq .absolute {
+    display: none !important;
+  }
+
+  /* Footer Mobile */
+  footer {
+    padding: 2rem 1rem !important;
+  }
+
+  footer .text-sm {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* Small Mobile (iPhone SE, etc) */
+@media (max-width: 375px) {
+  #hero .hero-heading {
+    font-size: 18vw !important;
+  }
+
+  #pfp-generator h2 {
+    font-size: 1.75rem !important;
+  }
+
+  #mint h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .derp-card {
+    padding: 1rem !important;
+  }
+
+  .derp-card-title {
+    font-size: 1rem !important;
+  }
+
+  .derp-upload-area,
+  .derp-generated-area {
+    min-height: 250px !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #hero {
+    padding-bottom: 400px !important;
+  }
+
+  #hero .hero-heading {
+    font-size: 15vw !important;
+  }
+
+  #pfp-generator .container {
+    max-width: 90% !important;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Navbar mobile improvements */
+  nav a,
+  nav button {
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Prevent text selection issues on mobile */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Improve scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
