@@ -1,0 +1,161 @@
+/* Derp/Wojak Themed Animations */
+
+/* Floating Animation */
+@keyframes derp-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.derp-float {
+  animation: derp-float 3s ease-in-out infinite;
+}
+
+/* Bounce Animation */
+@keyframes derp-bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.derp-bounce {
+  animation: derp-bounce 2.5s ease-in-out infinite;
+}
+
+/* Wobble/Shake Animation */
+@keyframes derp-wobble {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.derp-wobble {
+  animation: derp-wobble 2s ease-in-out infinite;
+}
+
+/* Slow Spin Animation */
+@keyframes derp-spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.derp-spin-slow {
+  animation: derp-spin-slow 20s linear infinite;
+}
+
+/* Tilt Animation */
+@keyframes derp-tilt {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.derp-tilt {
+  animation: derp-tilt 2.5s ease-in-out infinite;
+}
+
+/* Scale Pulse Animation */
+@keyframes derp-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.derp-pulse {
+  animation: derp-pulse 2s ease-in-out infinite;
+}
+
+/* Hover Effects for Derp Images */
+.derp-float:hover,
+.derp-bounce:hover {
+  animation-play-state: paused;
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* Combined Animations */
+.derp-float.derp-wobble {
+  animation: derp-float 3s ease-in-out infinite, derp-wobble 2s ease-in-out infinite;
+}
+
+.derp-float.derp-spin-slow {
+  animation: derp-float 3s ease-in-out infinite, derp-spin-slow 20s linear infinite;
+}
+
+.derp-float.derp-tilt {
+  animation: derp-float 3s ease-in-out infinite, derp-tilt 2.5s ease-in-out infinite;
+}
+
+.derp-bounce.derp-wobble {
+  animation: derp-bounce 2.5s ease-in-out infinite, derp-wobble 2s ease-in-out infinite;
+}
+
+.derp-bounce.derp-spin-slow {
+  animation: derp-bounce 2.5s ease-in-out infinite, derp-spin-slow 20s linear infinite;
+}
+
+.derp-bounce.derp-tilt {
+  animation: derp-bounce 2.5s ease-in-out infinite, derp-tilt 2.5s ease-in-out infinite;
+}
+
+/* Responsive - Reduce animation intensity on mobile */
+@media (max-width: 1024px) {
+  .derp-float,
+  .derp-bounce {
+    animation-duration: 4s;
+  }
+  
+  .derp-wobble,
+  .derp-tilt {
+    animation-duration: 3s;
+  }
+  
+  .derp-spin-slow {
+    animation-duration: 30s;
+  }
+}
+
+/* Add some chaotic energy */
+@keyframes derp-chaos {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translate(-10px, -10px) rotate(-5deg) scale(1.02);
+  }
+  50% {
+    transform: translate(10px, -15px) rotate(5deg) scale(0.98);
+  }
+  75% {
+    transform: translate(-5px, -20px) rotate(-3deg) scale(1.01);
+  }
+}
+
+.derp-chaos {
+  animation: derp-chaos 4s ease-in-out infinite;
+}
+

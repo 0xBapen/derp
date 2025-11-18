@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'PP Right Grotesk';
+  src: url('./fonts/PPRightGrotesk-SpatialBlack.otf') format('opentype');
+  font-weight: 900; /* Assuming SpatialBlack is a heavy weight */
+  font-style: normal;
+  font-display: swap; /* Use swap for better performance */
+}
+
+/* Optional: Define a utility class for easy application */
+.font-pp-grotesk {
+  font-family: 'PP Right Grotesk', sans-serif;
+}
